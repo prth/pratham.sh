@@ -58,6 +58,9 @@ export const query = graphql`
           fields {
             categorySlug
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             date
