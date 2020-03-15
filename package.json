@@ -62,6 +62,7 @@
     "gatsby-remark-images": "^3.1.49",
     "gatsby-remark-katex": "^3.1.25",
     "gatsby-remark-prismjs": "^3.3.33",
+    "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-remark-responsive-iframe": "^2.2.33",
     "gatsby-remark-smartypants": "^2.1.22",

@@ -3,7 +3,7 @@
 
 .feed {
   &__item {
-    @include margin-bottom(1.25);
+    @include margin-bottom(1.75);
 
     &:last-child {
       @include margin-bottom(.5);
@@ -13,7 +13,7 @@
       font-size: $typographic-base-font-size * 1.6875;
       @include line-height(1.5);
       @include margin-top(0);
-      @include margin-bottom(.5);
+      @include margin-bottom(.25);
 
       &-link {
         color: $color-base;
@@ -29,21 +29,23 @@
     }
 
     &-description {
-      font-size: $typographic-base-font-size;
       @include line-height(1);
+      @include margin-top(.25);
       @include margin-bottom(.75);
+      color: $color-gray-text;
     }
 
     &-meta {
-      &-time {
-        font-size: $typographic-small-font-size;
-        color: $color-base;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
+      color: $color-gray-text;
+
+      &-time {}
 
       &-divider {
         margin: 0 5px;
+
+        &::after {
+          content: '\00B7';
+        }
       }
 
       &-category {
