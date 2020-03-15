@@ -128,3 +128,13 @@ typings/
 .history
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
+
+# gitignore from gatsby-starter-lumen
+node_modules/
+.cache/
+public/
+npm-debug.log
+.eslintcache
+.gatsby-context.js
+.idea
+gatsby-starter-lumen.iml
