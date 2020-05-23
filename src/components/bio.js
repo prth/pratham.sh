@@ -16,7 +16,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 80, height: 80) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -25,10 +25,12 @@ const Bio = () => {
         siteMetadata {
           author {
             name
+            firstName
             summary
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -40,7 +42,6 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
       }}
     >
       <Image
@@ -49,20 +50,47 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 80,
           borderRadius: `100%`,
         }}
         imgStyle={{
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      <div>
+        <h3
+          style={{
+            marginTop: 0,
+            marginBottom: rhythm(1 / 3),
+          }}
+        >
+          Heyo, {author.firstName} here.
+        </h3>
+
+        <p
+          style={{
+            marginBottom: 0,
+            paddingRight: rhythm(1),
+          }}
+        >
+          {author.summary}
+        </p>
+
+        <div>
+          <a
+            href={`https://twitter.com/${social.twitter}`}
+            style={{ marginRight: rhythm(1 / 3), color: "inherit" }}
+          >
+            Twitter
+          </a>
+          <a
+            href={`https://github.com/${social.github}`}
+            style={{ color: "inherit" }}
+          >
+            Github
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

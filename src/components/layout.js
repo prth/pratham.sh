@@ -2,12 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import Footer from "./footer"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  if (location.pathname === rootPath) {
+  if (title && location.pathname === rootPath) {
     header = (
       <h1
         style={{
@@ -27,11 +28,10 @@ const Layout = ({ location, title, children }) => {
         </Link>
       </h1>
     )
-  } else {
+  } else if (title) {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
       >
@@ -58,11 +58,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   )
 }
