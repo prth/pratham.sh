@@ -43,7 +43,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
+        <footer
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        >
           <Bio />
         </footer>
       </article>
