@@ -21,10 +21,58 @@ For example, for REST APIs, you can check these ー</p>
 </ul>
 </li>
 </ul>
+<h3>Here is an example —</h3>
+<p><strong>Without a client:</strong></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fetch <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"node-fetch"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">createNewBlog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">"A case for API client libraries...."</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">"Deal or No Deal...."</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://example.com/blogs"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span>
+    body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>response<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">400</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ValidationError</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyCustomError</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>statusText<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><br>
+<strong>And, with a client:</strong></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"awesome-blog-client"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">createNewBlog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">"A case for API client libraries...."</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">"Deal or No Deal...."</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> blog <span class="token operator">=</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">createBlog</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">ValidationError</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// handle validation error;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// handle other errors;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h3>So, is this worth the extra engineering effort?</h3>
 <p>Yes, I like to think so. It’ll make my teammates happy to collaborate, and it’ll certainly make me happy to maintain codebases.</p>
 <p>What do you think? I will love to hear your thoughts on this topic.</p>
-<p><em><strong>#TODO</strong> Add sample code snippet, link to a service boilerplate repo with API client library setup.</em></p></section><hr style="margin-bottom:1.75rem"/><footer style="margin-bottom:1.75rem"><div style="display:flex"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:80px;height:80px;margin-right:0.875rem;margin-bottom:0;min-width:80px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIEAwX/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHwaqw8wYruB5wx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIQEQADEiL/2gAIAQEAAQUCUWWXmNRpnNiHPnP/xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAEDAQE/AYIhhX//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/AaajoX//xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEABj8CsL//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEQITFB/9oACAEBAAE/IdFE6wN6XLgC/bMGory3j//aAAwDAQACAAMAAAAQmMdB/8QAFxEBAAMAAAAAAAAAAAAAAAAAAREgQf/aAAgBAwEBPxASe0n/xAAXEQEAAwAAAAAAAAAAAAAAAAABESBB/9oACAECAQE/EEI5Sf/EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExEGFBUZH/2gAIAQEAAT8Q2mu48Cvs1xSgEQv34hhwHASvvCUJhMkdEG7RUTM//9k=" alt="Prathamesh Salunkhe" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/4a49ecc11dc54332b8a1045dc5186c09/2b9ee/profile-pic.jpg 1x,
+<p><em><strong>#TODO</strong> Link to a service boilerplate repo with API client library setup.</em></p></section><hr style="margin-bottom:1.75rem"/><footer style="margin-bottom:1.75rem"><div style="display:flex"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:80px;height:80px;margin-right:0.875rem;margin-bottom:0;min-width:80px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIEAwX/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHwaqw8wYruB5wx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIQEQADEiL/2gAIAQEAAQUCUWWXmNRpnNiHPnP/xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAEDAQE/AYIhhX//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/AaajoX//xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEABj8CsL//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEQITFB/9oACAEBAAE/IdFE6wN6XLgC/bMGory3j//aAAwDAQACAAMAAAAQmMdB/8QAFxEBAAMAAAAAAAAAAAAAAAAAAREgQf/aAAgBAwEBPxASe0n/xAAXEQEAAwAAAAAAAAAAAAAAAAABESBB/9oACAECAQE/EEI5Sf/EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExEGFBUZH/2gAIAQEAAT8Q2mu48Cvs1xSgEQv34hhwHASvvCUJhMkdEG7RUTM//9k=" alt="Prathamesh Salunkhe" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/4a49ecc11dc54332b8a1045dc5186c09/2b9ee/profile-pic.jpg 1x,
 /static/4a49ecc11dc54332b8a1045dc5186c09/76539/profile-pic.jpg 1.5x,
 /static/4a49ecc11dc54332b8a1045dc5186c09/e5d64/profile-pic.jpg 2x" /><img loading="lazy" width="80" height="80" srcset="/static/4a49ecc11dc54332b8a1045dc5186c09/2b9ee/profile-pic.jpg 1x,
 /static/4a49ecc11dc54332b8a1045dc5186c09/76539/profile-pic.jpg 1.5x,
