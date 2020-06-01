@@ -34,10 +34,67 @@ For integrating third-party external APIs, an official client library by that ta
   - [openapi-generator](https://github.com/OpenAPITools/openapi-generator)
   - [swagger-codegen](https://github.com/swagger-api/swagger-codegen)
 
+### Here is an example --
+
+**Without a client:**
+
+```javascript
+const fetch = require("node-fetch")
+
+async function createNewBlog() {
+  const content = {
+    title: "A case for API client libraries....",
+    content: "Deal or No Deal....",
+  }
+
+  const response = await fetch("https://example.com/blogs", {
+    method: "post",
+    body: JSON.stringify(content),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+
+  if (!response.ok) {
+    if (response.status === 400) {
+      throw new ValidationError()
+    }
+
+    throw new MyCustomError(response.statusText)
+  }
+
+  return response.json()
+}
+```
+
+\
+**And, with a client:**
+
+```javascript
+const client = require("awesome-blog-client")
+
+async function createNewBlog() {
+  const content = {
+    title: "A case for API client libraries....",
+    content: "Deal or No Deal....",
+  }
+
+  try {
+    const blog = await client.createBlog(content)
+  } catch (err) {
+    if (err instanceof ValidationError) {
+      // handle validation error;
+    } else {
+      // handle other errors;
+    }
+  }
+}
+```
+
 ### So, is this worth the extra engineering effort?
 
 Yes, I like to think so. It'll make my teammates happy to collaborate, and it'll certainly make me happy to maintain codebases.
 
 What do you think? I will love to hear your thoughts on this topic.
 
-_**#TODO** Add sample code snippet, link to a service boilerplate repo with API client library setup._
+_**#TODO** Link to a service boilerplate repo with API client library setup._
