@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[pratham.sh]]></title><description><![CDATA[I'm a Software Engineer living in Mumbai, evolving and working on making cool things at Upstox.]]></description><link>https://pratham.sh</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 01 Jun 2020 18:47:12 GMT</lastBuildDate><item><title><![CDATA[A case for API client libraries in microservices architecture]]></title><description><![CDATA[In this post, I will make a case for maintaining API client libraries for inter-process communication in microservices. I will present the…]]></description><link>https://pratham.sh/a-case-for-api-client-libraries-in-microservices/</link><guid isPermaLink="false">https://pratham.sh/a-case-for-api-client-libraries-in-microservices/</guid><pubDate>Sun, 31 May 2020 20:39:30 GMT</pubDate><content:encoded>&lt;p&gt;In this post, I will make a case for maintaining API client libraries for inter-process communication in microservices. I will present the benefits they will have for a team maintaining multiple services, and how it can improve the team collaboration.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[pratham.sh]]></title><description><![CDATA[I'm a Software Engineer living in Mumbai, evolving and working on making cool things at Upstox.]]></description><link>https://pratham.sh</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 14 Jun 2020 17:17:27 GMT</lastBuildDate><item><title><![CDATA[Template for writing tech specs]]></title><description><![CDATA[So, let’s all be on the same page first ー It’s  to have no documentation It’s  to have documentation And, it’s  to have documentation which…]]></description><link>https://pratham.sh/a-template-for-tech-specs/</link><guid isPermaLink="false">https://pratham.sh/a-template-for-tech-specs/</guid><pubDate>Sun, 14 Jun 2020 05:54:46 GMT</pubDate><content:encoded>&lt;p&gt;So, let’s all be on the same page first ー&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It’s &lt;code class=&quot;language-text&quot;&gt;bad&lt;/code&gt; to have no documentation&lt;/li&gt;
+&lt;li&gt;It’s &lt;code class=&quot;language-text&quot;&gt;good&lt;/code&gt; to have documentation&lt;/li&gt;
+&lt;li&gt;And, it’s &lt;code class=&quot;language-text&quot;&gt;flippin’ amazing&lt;/code&gt; to have documentation which is thorough, organised, collaborative, well-written, well-structured, well-articulated and more-well-full-of-productivity-fairy-dust-qualities.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;In this post, I will share a template for writing technical specs. &lt;br&gt;
+The template outlines lower-level details of the engineering work needed for a feature, service or a small project.&lt;/p&gt;
+&lt;h4&gt;Origin story&lt;/h4&gt;
+&lt;p&gt;In 2015-17, I worked with the amazing team at &lt;a href=&quot;https://www.linkedin.com/company/super---your-personal-recruiter/&quot;&gt;Super.jobs (tinder for jobs)&lt;/a&gt;. It was the most amazing time I’ve had working. At Super, we came up with this template for writing tech specs.&lt;/p&gt;
+&lt;p&gt;I have made a few adjustments over the years while retaining the core document structure. Here is the template -&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Template -&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&quot;https://www.notion.so/Tech-Spec-Template-d8f44dd685ad4804bb5a2eddcea62679&quot;&gt;https://www.notion.so/Tech-Spec-Template-d8f44dd685ad4804bb5a2eddcea62679&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0df15c75964e7edfcd475f43b8ff402b/7e881/tech-spec-template.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 296.6216216216216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAA7CAYAAAB7c6ruAAAACXBIWXMAAAsSAAALEgHS3X78AAAE9klEQVRYw61YaW/zNgzO//9LQ7EBw9t2Q7fh/bijaY7mTnwk8X1wfCjRlp3jTZsaYCnJLkXxeEhlEMcxDYevtFwsaDIZ03Qyoc1mTYvFnP79529arZayNh6PaDqdUFVVhKeuazr3DIqioN+en+jPP17o+/e/6OHhJ3p5+V0EPD890tPTN/rl5wd6/PYrPT8/UlmW1wXqC3Adl2VBYRhSlmWUpqlwbBxFEeV5fl1gxTsej0c6HA603+9FgO97tF6v5ejg2+2GVsulfKcbX6IBtDkeDyII9gEFvk/bzYYFbWnHBA3xnXuaS8+gv4CPcbyiyC3vCvqhhvDyaPRGs9k7L1Rnd70mgN92xoOCjRwGHtstkGOnaUZJkrJmpXhU+TnCuzwvGoK5BviTxBE7YEtLNvxqtWJak+/5FAQB2zPgzXxLPA9C4ZgfjxErkIsSoLKsEDY4EskEu6jdsiyn3FLmEMJGx/gO/6caWy+XFMeRHPcrnkECp7wNJdWMtjXbom5CyIyZ7Hrt8LqzVhkNax4UecKBfTT2Ytvtdp4N8oy1TyzFHR5FcecdHNk4BcJmsxnN53N6n06FLxgswOEkOAdOMA7xOSpC8jzPcZJxkAhUtWFgdX87NobX48MBLu+ulUYgBmmS8KT8GqfEjCDAw4gTv5sdt6XaSerBKVkSiT1gF48dstvteIOo54zr1DgFRwbOiTAYmr0MLlliKQz3YnxgJLzfvtN5aJ1Sn6LNZx810QCguVwuvkouDXIGzzD0mzBxc7Wfu5fIhJcNGzgljg4msGdzCWaQBvpivuAgXwoHGoE08BWd4AOgjqANpMZx2nEIUs9AVNCkYEupeFTH4NASXDQ8Z4cWHM6AxFmqWnBI04TBdcN2DFizLWu4u1gKbnIK1F4sZmIL1BV0CQhmY/DshAyoGvhX0rloiBxOOVP2+4OgDuqzwnwL92aMYEZWqM36JE75eAD/IJcTRpoJHxPHXfOx0dNAy0/bEAXd97YSLshVOAjZcy2g25BJO72P5HJlA9stoavlygQ4B7oGMjiCG+PtdtexL8ADsWnLqImltoBX1nuain0ULzqIrahtUs+WUVQ+xGOWpTIubMt2i3PItiAtYrOA8WhEs/d36WJfX/8Te16DqWsbdBA7sCT5zHbyOLfR0pmK1+Z2823Qxipi2B65ErTAPwL+YXCUAOllWKBJS2N0hfoO9PdLwMcC2uV9skeGdvP5TAjBjUJ/OOzvQOw8k/4QxwTBfgfO68z2iYp5nUBOs6ZLc8m2IqX0h0g3GBZZYqpc0FQ6rXoKEPj2XAZ9yIa3gsQAuw2HQ2nS7yujtdrQ9NhaJ8CBQIa7Y3etnRtwOKl6bTtnAGIlVQ2XHnDM1wwaAiDLVfMNxlhDrDaBbapeIt4FajcI3FS27KTq9ddU64tO+UzX1bn4TKVrnQla45j3tSIc2L63k/hS1O5WPG1H2sqn8z5qNzaMGLEFqa3hTX/dth7ab8NxGKvD2t47EPvbHpucHruL0G6v3UduRehur+1cfPTqf3+PzcLe+OID51y6C9e9S4978TnxMsAhSyMKAABOh6CXRYPGh4vdwknnYCRXzSVQm06X+pfESyQa4mP8RGB+oMjutyGEDbnSjcdj+X1BL4Ld3vA2MlWvNpdH5DNs5TvVrK1qbdVzL+P9TqyxoQvjptfTeXkyd3m/g4Cs/wFSjvuPQK2SQgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Tech Spec [Template]&quot;
+        title=&quot;Tech Spec [Template]&quot;
+        src=&quot;/static/0df15c75964e7edfcd475f43b8ff402b/fcda8/tech-spec-template.png&quot;
+        srcset=&quot;/static/0df15c75964e7edfcd475f43b8ff402b/12f09/tech-spec-template.png 148w,
+/static/0df15c75964e7edfcd475f43b8ff402b/e4a3f/tech-spec-template.png 295w,
+/static/0df15c75964e7edfcd475f43b8ff402b/fcda8/tech-spec-template.png 590w,
+/static/0df15c75964e7edfcd475f43b8ff402b/efc66/tech-spec-template.png 885w,
+/static/0df15c75964e7edfcd475f43b8ff402b/c83ae/tech-spec-template.png 1180w,
+/static/0df15c75964e7edfcd475f43b8ff402b/7e881/tech-spec-template.png 1521w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;#TODO&lt;/strong&gt; Attach a example tech spec.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A case for API client libraries in microservices architecture]]></title><description><![CDATA[In this post, I will make a case for maintaining API client libraries for inter-process communication in microservices. I will present the…]]></description><link>https://pratham.sh/a-case-for-api-client-libraries-in-microservices/</link><guid isPermaLink="false">https://pratham.sh/a-case-for-api-client-libraries-in-microservices/</guid><pubDate>Sun, 31 May 2020 20:39:30 GMT</pubDate><content:encoded>&lt;p&gt;In this post, I will make a case for maintaining API client libraries for inter-process communication in microservices. I will present the benefits they will have for a team maintaining multiple services, and how it can improve the team collaboration.&lt;/p&gt;
 &lt;p&gt;Microservices architecture is quite popular. Once you have microservices, you certainly have a few internal communication mechanisms. The interaction can be synchronous, asynchronous; it can be one-to-one or even one-to-many. Developing and integrating the integration is achieved with limited hurdles, and as often the case with engineering, the maintenance and collaboration are challenging.&lt;/p&gt;
 &lt;p&gt;With the teams I have worked, we often used HTTP based REST APIs for synchronous interactions. And, for asynchronous calls, we used SQS or Apache Kafka. Services were distributed across many small squads to develop and maintain. We would collaborate on inter-service dependency through postman collections or swagger documentation or a document spec with the payload details and examples.&lt;/p&gt;
 &lt;p&gt;For integrating third-party external APIs, an official client library by that target service comes in convenient. So, the question is, can the same notion be applied within a company for the internal services. Here are some points in its favour, and how to implement it effectively —&lt;/p&gt;
