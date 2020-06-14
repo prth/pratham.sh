@@ -11,7 +11,7 @@ type Data = {
   site: {
     siteMetadata: {
       author: {
-        firstName: string
+        name: string
       }
     }
   }
@@ -38,10 +38,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
   return (
     <Layout location={location} title={false}>
-      <SEO
-        title={`${author.firstName}'s Blog Box`}
-        hideAuthorNameInTitle={true}
-      />
+      <SEO title={`${author.name} | Blog Box`} hideAuthorNameInTitle={true} />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -80,7 +77,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author {
-          firstName
+          name
         }
       }
     }

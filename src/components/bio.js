@@ -31,6 +31,7 @@ const Bio = () => {
           social {
             twitter
             github
+            email
           }
         }
       }
@@ -64,7 +65,11 @@ const Bio = () => {
             marginBottom: rhythm(1 / 3),
           }}
         >
-          Heyo, {author.firstName} here.
+          Heyo{" "}
+          <span role="img" aria-label="Waving Hand">
+            👋
+          </span>{" "}
+          I'm {author.firstName}.
         </h3>
 
         <p
@@ -85,9 +90,12 @@ const Bio = () => {
           </a>
           <a
             href={`https://github.com/${social.github}`}
-            style={{ color: "inherit" }}
+            style={{ marginRight: rhythm(1 / 3), color: "inherit" }}
           >
             Github
+          </a>
+          <a href={`mailto:${social.email}`} style={{ color: "inherit" }}>
+            Email
           </a>
         </div>
       </div>

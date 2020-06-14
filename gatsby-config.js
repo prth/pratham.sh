@@ -12,6 +12,7 @@ module.exports = {
     social: {
       twitter: `prthsalunkhe`,
       github: `prth`,
+      email: `spratham55@gmail.com`,
     },
   },
   plugins: [
